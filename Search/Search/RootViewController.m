@@ -1,6 +1,6 @@
 //
 //  RootViewController.m
-//  UISearchDisplay
+//  Search
 //
 //  Created by Hiroaki Komatsu on 12/09/24.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.

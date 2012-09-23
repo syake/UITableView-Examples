@@ -1,6 +1,6 @@
 //
 //  main.m
-//  UISearchDisplay
+//  Search
 //
 //  Created by Hiroaki Komatsu on 12/09/24.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
@@ -12,7 +12,7 @@
 
 int main(int argc, char *argv[])
 {
-	@autoreleasepool {
-	    return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-	}
+    @autoreleasepool {
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
 }
