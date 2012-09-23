@@ -25,3 +25,11 @@ UITableView の設置例まとめ for Objective-C
 
   ![Alt text](https://raw.github.com/syake/UITableView-Examples/master/assets/twitter_01.png)　　　
   ![Alt text](https://raw.github.com/syake/UITableView-Examples/master/assets/twitter_02.png)
+
+### Search
+ * UISearchDisplay を使ってリストの絞り込み検索のサンプル
+
+  ![Alt text](https://raw.github.com/syake/UITableView-Examples/master/assets/search_01.png)　　　
+  ![Alt text](https://raw.github.com/syake/UITableView-Examples/master/assets/search_02.png)　　　
+  ![Alt text](https://raw.github.com/syake/UITableView-Examples/master/assets/search_03.png)
+
