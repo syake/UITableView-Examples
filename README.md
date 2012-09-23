@@ -6,7 +6,7 @@ UITableView の設置例まとめ for Objective-C
 条件
 ---------------
  * Xcode 4.2
- * iOS SDK 5
+ * iOS SDK 5.1
  * Objective-C
 
 概要
