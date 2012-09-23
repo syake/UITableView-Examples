@@ -1,14 +1,13 @@
 //
 //  RootViewController.m
-//  Simple
+//  UISearchDisplay
 //
-//  Created by Hiroaki Komatsu on 12/09/11.
+//  Created by Hiroaki Komatsu on 12/09/24.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "RootViewController.h"
-#import "DetailViewController.h"
-#import "MyData.h"
+
 
 @implementation RootViewController
 
@@ -29,29 +28,17 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (void)dealloc
-{
-    [_datas release], _datas = nil;
-    [super dealloc];
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // タイトル
-    self.navigationItem.title = @"Simple";
-    
-    // データを生成
-    _datas = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 20; i++) {
-        MyData *data = [MyData alloc];
-        data.title = [[NSString alloc] initWithFormat:@"%i番目の項目", i];
-        [_datas addObject:data];
-        [data release];
-    }
+
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+ 
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)viewDidUnload
@@ -84,21 +71,23 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [_datas count];
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -108,12 +97,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    // 中身を生成
-    MyData *data = [_datas objectAtIndex:indexPath.row];
-    cell.textLabel.text = data.title;
+    // Configure the cell...
     
     return cell;
 }
@@ -162,15 +148,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:nil bundle:nil];
-    
-    // データを受け渡す
-    MyData *data = [_datas objectAtIndex:indexPath.row];
-    detailViewController.data = data;
-    
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
 }
 
 @end

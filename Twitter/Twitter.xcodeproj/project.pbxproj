@@ -100,7 +100,6 @@
 				540EA3B2160C705000C62DDD /* TweetViewCell.m */,
 				540EA3B8160C85A400C62DDD /* DetailViewController.h */,
 				540EA3B9160C85A400C62DDD /* DetailViewController.m */,
-				5416BEBC160099BD0029C05C /* Model */,
 				5416BEA2160096D90029C05C /* Supporting Files */,
 			);
 			path = Twitter;
@@ -115,13 +114,6 @@
 				5416BEA9160096D90029C05C /* Twitter-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5416BEBC160099BD0029C05C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

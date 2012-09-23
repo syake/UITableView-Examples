@@ -11,11 +11,11 @@
 
 @interface DetailViewController : UIViewController
 {
-	NSDictionary *_data;
-	UIImageView *imageView;
-	UILabel *nameLabel;
-	UILabel *screenNameLabel;
-	UITextView *tweetText;
+    NSDictionary *_data;
+    UIImageView *imageView;
+    UILabel *nameLabel;
+    UILabel *screenNameLabel;
+    UITextView *tweetText;
 }
 
 @property (nonatomic, assign) NSDictionary *data;

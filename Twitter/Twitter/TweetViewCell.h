@@ -11,14 +11,14 @@
 
 @interface TweetViewCell : UITableViewCell
 {
-	UIView *contentView;
-	UILabel *nameLabel;
-	UILabel *screenNameLabel;
-	UILabel *tweetLabel;
-	
-	CGRect nameRect;
-	CGRect screenNameRect;
-	CGRect tweetRect;
+    UIView *contentView;
+    UILabel *nameLabel;
+    UILabel *screenNameLabel;
+    UILabel *tweetLabel;
+    
+    CGRect nameRect;
+    CGRect screenNameRect;
+    CGRect tweetRect;
 }
 
 @property (nonatomic, retain) UILabel *nameLabel;

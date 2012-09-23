@@ -11,9 +11,9 @@
 
 @interface RootViewController : UITableViewController
 {
-	BOOL loaded;
-	NSArray *statuses;
-	NSCache *imageCache;
+    BOOL loaded;
+    NSArray *statuses;
+    NSCache *imageCache;
 }
 
 @end

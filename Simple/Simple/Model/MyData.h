@@ -8,8 +8,8 @@
 
 @interface MyData : NSObject
 {
-	NSString *_identifier;
-	NSString *_title;
+    NSString *_identifier;
+    NSString *_title;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

@@ -15,18 +15,18 @@
 
 - (id)init
 {
-	// 初期化メソッド
-	self = [super init];
-	if (!self) {
-		return nil;
-	}
-	
-	// 識別子を作成する
-	CFUUIDRef uuid;
-	uuid = CFUUIDCreate(NULL);
-	_identifier = (NSString*)CFUUIDCreateString(NULL, uuid);
-	CFRelease(uuid);
-	return self;
+    // 初期化メソッド
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    // 識別子を作成する
+    CFUUIDRef uuid;
+    uuid = CFUUIDCreate(NULL);
+    _identifier = (NSString*)CFUUIDCreateString(NULL, uuid);
+    CFRelease(uuid);
+    return self;
 }
 
 @end

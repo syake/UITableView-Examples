@@ -10,7 +10,7 @@
 
 @interface IndicatorViewCell : UITableViewCell
 {
-	UIActivityIndicatorView *spinner;
+    UIActivityIndicatorView *spinner;
 }
 
 @end

@@ -32,9 +32,9 @@
 
 - (void)dealloc
 {
-	[titleLabel removeFromSuperview];
-	[titleLabel release];
-	[super dealloc];
+    [titleLabel removeFromSuperview];
+    [titleLabel release];
+    [super dealloc];
 }
 
 #pragma mark - View lifecycle
@@ -50,15 +50,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-	// タイトル
-	self.navigationItem.title = [[NSString alloc] initWithFormat:@"%@", data.title];
-	
-	// 描画
-	titleLabel = [[UILabel alloc] init];
-	titleLabel.frame = CGRectMake(10, 10, (self.view.bounds.size.width-20), 25);
-	titleLabel.text = [[NSString alloc] initWithFormat:@"%@", data.title];
-	[self.view addSubview:titleLabel];
+    
+    // タイトル
+    self.navigationItem.title = [[NSString alloc] initWithFormat:@"%@", data.title];
+    
+    // 描画
+    titleLabel = [[UILabel alloc] init];
+    titleLabel.frame = CGRectMake(10, 10, (self.view.bounds.size.width-20), 25);
+    titleLabel.text = [[NSString alloc] initWithFormat:@"%@", data.title];
+    [self.view addSubview:titleLabel];
 }
 
 - (void)viewDidUnload

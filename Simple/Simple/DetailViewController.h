@@ -11,8 +11,8 @@
 
 @interface DetailViewController : UIViewController
 {
-	MyData *data;
-	UILabel *titleLabel;
+    MyData *data;
+    UILabel *titleLabel;
 }
 
 @property (nonatomic, assign) MyData *data;
