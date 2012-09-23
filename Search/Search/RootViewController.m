@@ -28,17 +28,38 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc
+{
+    [_datas release], _datas = nil;
+    [_filteredListContent release], _filteredListContent = nil;
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // タイトル
+    self.navigationItem.title = @"Search";
+    
+    // 検索エリア
+    UISearchBar *searchBar = [[[UISearchBar alloc] init] autorelease];
+    searchBar.showsCancelButton = NO;
+    searchBar.placeholder = @"検索ワードを入力してください";
+    [searchBar sizeToFit];
+    self.tableView.tableHeaderView = searchBar;
+    
+    // 検索コンテンツエリア
+    UISearchDisplayController *searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDelegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    
+    // データを生成
+    _datas = [[NSArray alloc] initWithObjects:@"iPhone", @"iPod", @"iPod touch", @"iMac", @"Mac Pro", @"iBook", @"MacBook", @"MacBook Pro", @"PowerBook", nil];
+    _filteredListContent = [[NSMutableArray arrayWithCapacity:[_datas count]] retain];
 }
 
 - (void)viewDidUnload
@@ -78,16 +99,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        return [_filteredListContent count];
+    }
+    return [_datas count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,7 +120,14 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    // 中身を生成
+    NSString* label;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        label = [_filteredListContent objectAtIndex:indexPath.row];
+    } else {
+        label = [_datas objectAtIndex:indexPath.row];
+    }
+    cell.textLabel.text = label;
     
     return cell;
 }
@@ -148,13 +176,39 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    UIViewController *detailViewController = [[UIViewController alloc] init];
+    
+    // データを受け渡す
+    NSString* label;
+    if (tableView == self.searchDisplayController.searchResultsTableView) {
+        label = [_filteredListContent objectAtIndex:indexPath.row];
+    } else {
+        label = [_datas objectAtIndex:indexPath.row];
+    }
+    detailViewController.title = label;
+    
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
+}
+
+#pragma mark - UISearchDisplayDelegate
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    [_filteredListContent removeAllObjects];
+    for (NSString* label in _datas) {
+        NSComparisonResult result = [label compare:searchText options:(NSCaseInsensitiveSearch|NSDiacriticInsensitiveSearch) range:NSMakeRange(0, [searchText length])];
+        if (result == NSOrderedSame) {
+            [_filteredListContent addObject:label];
+        }
+    }
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString scope:[[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:[self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
+    return YES;
 }
 
 @end

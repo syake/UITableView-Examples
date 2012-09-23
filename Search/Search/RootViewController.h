@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <UISearchDisplayDelegate>
+{
+    NSArray* _datas;
+    NSMutableArray* _filteredListContent;
+}
 
 @end
