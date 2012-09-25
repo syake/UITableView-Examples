@@ -46,54 +46,55 @@
 // コンテンツの左位置
 #define CONTENT_LEFT (CELL_LEFT_MARGIN + IMAGE_SIZE + CONTENT_LEFT_MARGIN)
 
-// 名前フォント
-static UIFont *_nameFont = nil;
-+ (UIFont*)nameFont
-{
-    if (!_nameFont) {
-        _nameFont = [UIFont boldSystemFontOfSize:14];
-    }
-    return _nameFont;
-}
-
-// スクリーン名フォント
-static UIFont *_screenNameFont = nil;
-+ (UIFont*)screenNameFont
-{
-    if (!_screenNameFont) {
-        _screenNameFont = [UIFont systemFontOfSize:12];
-    }
-    return _screenNameFont;
-}
-
-// テキストフォント
-static UIFont *_tweetFont = nil;
-+ (UIFont*)tweetFont
-{
-    if (!_tweetFont) {
-        _tweetFont = [UIFont systemFontOfSize:14];
-    }
-    return _tweetFont;
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Custom initialization
+        // Initialization code
         self.accessoryType = UITableViewCellAccessoryNone;
         
         contentView = [[TweetViewCellContent alloc] initWithFrame:CGRectZero];
         contentView.opaque = YES;
         contentView.backgroundColor = [UIColor clearColor];
         [self addSubview:contentView];
+        [self addSubview:self.imageView];
         
         nameLabel = [[UILabel alloc] init];
+        nameLabel.font = [UIFont boldSystemFontOfSize:14];
+        
         screenNameLabel = [[UILabel alloc] init];
+        screenNameLabel.font = [UIFont systemFontOfSize:12];
+        
         tweetLabel = [[UILabel alloc] init];
-        [self addSubview:self.imageView];
+        tweetLabel.font = [UIFont systemFontOfSize:14];
     }
     return self;
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
+    [super setSelected:selected animated:animated];
+    
+    // Configure the view for the selected state
+    if (selected == NO) {
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
+{
+    [super setHighlighted:highlighted animated:animated];
+    
+    // Configure the view for the highlighted state
+    if (highlighted == NO) {
+        [self setNeedsDisplay];
+    }
+}
+
+- (void)setNeedsDisplay
+{
+    [super setNeedsDisplay];
+    [contentView setNeedsDisplay];
 }
 
 - (void)dealloc
@@ -101,7 +102,6 @@ static UIFont *_tweetFont = nil;
     [nameLabel release];
     [screenNameLabel release];
     [tweetLabel release];
-    
     [super dealloc];
 }
 
@@ -119,19 +119,19 @@ static UIFont *_tweetFont = nil;
     
     // 名前
     s = nameLabel.text;
-    size = [s sizeWithFont:[TweetViewCell nameFont] forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
+    size = [s sizeWithFont:nameLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
     nameRect = CGRectMake(x, y, size.width, size.height);
     
     // スクリーン名
     dx = nameRect.size.width + 4;
     s = screenNameLabel.text;
-    size = [s sizeWithFont:[TweetViewCell screenNameFont] forWidth:(content_width - dx) lineBreakMode:UILineBreakModeTailTruncation];
+    size = [s sizeWithFont:screenNameLabel.font forWidth:(content_width - dx) lineBreakMode:UILineBreakModeTailTruncation];
     screenNameRect = CGRectMake(x + dx, y, size.width, size.height);
     
     // つぶやき
     y += nameRect.size.height;
     s = tweetLabel.text;
-    size = [s sizeWithFont:[TweetViewCell tweetFont] constrainedToSize:CGSizeMake(content_width, 10000) lineBreakMode:UILineBreakModeWordWrap];
+    size = [s sizeWithFont:tweetLabel.font constrainedToSize:CGSizeMake(content_width, 10000) lineBreakMode:UILineBreakModeWordWrap];
     tweetRect = CGRectMake(x, y, size.width, size.height);
     
     // 全体の高さ
@@ -176,15 +176,15 @@ static UIFont *_tweetFont = nil;
     
     [blackColor set];
     s = nameLabel.text;
-    [s drawInRect:nameRect withFont:[TweetViewCell nameFont]];
+    [s drawInRect:nameRect withFont:nameLabel.font];
     
     [grayColor set];
     s = screenNameLabel.text;
-    [s drawInRect:screenNameRect withFont:[TweetViewCell screenNameFont]];
+    [s drawInRect:screenNameRect withFont:screenNameLabel.font];
     
     [blackColor set];
     s = tweetLabel.text;
-    [s drawInRect:tweetRect withFont:[TweetViewCell tweetFont]];
+    [s drawInRect:tweetRect withFont:tweetLabel.font];
     
     // 角丸矩形
     CGRect imageRect = self.imageView.frame;
@@ -205,31 +205,6 @@ static UIFont *_tweetFont = nil;
         CGContextAddArcToPoint(context, lx, ty, lx, cy, 5.0);
         CGContextClosePath(context);
         CGContextDrawPath(context, kCGPathFillStroke);
-    }
-}
-
-- (void)setNeedsDisplay {
-    [super setNeedsDisplay];
-    [contentView setNeedsDisplay];
-}
-
-- (void)setFrame:(CGRect)rect
-{
-    [super setFrame:rect];
-    [self setNeedsDisplay];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-    if (selected == NO) {
-        [self setNeedsDisplay];
-    }
-}
-
-- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
-    [super setHighlighted:highlighted animated:animated];
-    if (highlighted == NO) {
-        [self setNeedsDisplay];
     }
 }
 
