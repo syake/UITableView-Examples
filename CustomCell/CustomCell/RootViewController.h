@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UITableViewController
+{
+    NSArray* _datas;
+}
 
 @end

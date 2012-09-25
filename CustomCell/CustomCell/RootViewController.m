@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "CustomViewCell.h"
 
 
 @implementation RootViewController
@@ -28,17 +29,30 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc
+{
+    [_datas release], _datas = nil;
+    [super dealloc];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // タイトル
+    self.navigationItem.title = @"CustomCell";
+    
+    // データを生成
+    _datas = [[NSArray alloc] initWithObjects:
+              [NSDictionary dictionaryWithObjectsAndKeys:@"銅鉱", @"name", @"item01.png", @"image", @"金属の銅を含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"item02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"item03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"item04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"item05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"item06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", nil],
+              nil];
 }
 
 - (void)viewDidUnload
@@ -78,28 +92,36 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_datas count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return  64.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomViewCell *cell = (CustomViewCell*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[CustomViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    // Configure the cell...
+    // 中身を生成
+    NSDictionary *data = [_datas objectAtIndex:indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:[data objectForKey:@"image"]];
+    cell.textLabel.text = [data objectForKey:@"name"];
+    cell.detailTextLabel.text = [data objectForKey:@"description"];
+    cell.priceLabel.text = [data objectForKey:@"price"];
     
     return cell;
 }
