@@ -15,4 +15,4 @@ profile
 *.moved-aside
 
 # Assets files
-assets/*.psd
+**/assets/*.psd
