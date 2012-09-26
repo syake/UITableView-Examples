@@ -13,3 +13,8 @@ CustomCell
  * ダミーの配列を用意してテーブルセルにそれぞれの値を設置
  * テキスト要素を drawRect で描画して高速化
  * 編集ボタンを押した時のレイアウトテスト
+
+素材提供
+---------------
+ * [Whitecat](http://whitecafe.sakura.ne.jp/ "Whitecat")
+   * アイテム素材
