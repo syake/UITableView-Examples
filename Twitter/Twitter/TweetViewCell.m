@@ -12,15 +12,16 @@
 @interface TweetViewCellContent:UIView
 @end
 @implementation TweetViewCellContent
-- (void)drawRect:(CGRect)rect {
-    [(TweetViewCell*)self.superview drawRectContent:rect];
+- (void)drawRect:(CGRect)rect
+{
+    [(TweetViewCell*)self.superview.superview drawRectContent:rect];
 }
 @end
 
 
 @implementation TweetViewCell
 
-@synthesize contentView, nameLabel, screenNameLabel, tweetLabel;
+@synthesize nameLabel, screenNameLabel, tweetLabel;
 
 // セル全体の上マージン
 #define CELL_TOP_MARGIN 4
@@ -54,10 +55,8 @@
         self.accessoryType = UITableViewCellAccessoryNone;
         
         contentView = [[TweetViewCellContent alloc] initWithFrame:CGRectZero];
-        contentView.opaque = YES;
         contentView.backgroundColor = [UIColor clearColor];
-        [self addSubview:contentView];
-        [self addSubview:self.imageView];
+        [self.contentView addSubview:contentView];
         
         nameLabel = [[UILabel alloc] init];
         nameLabel.font = [UIFont boldSystemFontOfSize:14];
@@ -94,6 +93,7 @@
 - (void)setNeedsDisplay
 {
     [super setNeedsDisplay];
+    [contentView setFrame:self.bounds];
     [contentView setNeedsDisplay];
 }
 
@@ -102,6 +102,8 @@
     [nameLabel release];
     [screenNameLabel release];
     [tweetLabel release];
+    [contentView removeFromSuperview];
+    [contentView release];
     [super dealloc];
 }
 
@@ -143,17 +145,13 @@
 
 #pragma mark - View lifecycle
 
-- (void) layoutSubviews {
+- (void) layoutSubviews
+{
     [super layoutSubviews];
     self.imageView.frame = CGRectMake(CELL_LEFT_MARGIN, CELL_TOP_MARGIN, IMAGE_SIZE, IMAGE_SIZE);
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.imageView.layer.masksToBounds = YES;
     self.imageView.layer.cornerRadius = 5.0;
-}
-
-- (void)drawRect:(CGRect)rect
-{
-    // 背景描画
 }
 
 - (void)drawRectContent:(CGRect)rect
