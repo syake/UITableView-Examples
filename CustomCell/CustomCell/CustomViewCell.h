@@ -14,7 +14,6 @@
     UIView *contentView;
     UILabel *nameLabel;
     UILabel *descriptionLabel;
-    
     UILabel *priceLabel;
 }
 

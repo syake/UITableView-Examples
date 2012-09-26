@@ -44,14 +44,17 @@
     // タイトル
     self.navigationItem.title = @"CustomCell";
     
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     // データを生成
     _datas = [[NSArray alloc] initWithObjects:
               [NSDictionary dictionaryWithObjectsAndKeys:@"銅鉱", @"name", @"item01.png", @"image", @"金属の銅を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"item02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"item03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"item04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"item05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"item06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"item02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"item03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"item04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"item05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"item06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", @"100", @"price", nil],
               nil];
 }
 
@@ -85,7 +88,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
+}
+
+// デバイスを回転させたとき
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -104,7 +113,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return  64.0f;
+    return  60.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,15 +122,15 @@
     
     CustomViewCell *cell = (CustomViewCell*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[CustomViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[CustomViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // 中身を生成
     NSDictionary *data = [_datas objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[data objectForKey:@"image"]];
-    cell.textLabel.text = [data objectForKey:@"name"];
-    cell.detailTextLabel.text = [data objectForKey:@"description"];
+    cell.nameLabel.text = [data objectForKey:@"name"];
+    cell.descriptionLabel.text = [data objectForKey:@"description"];
     cell.priceLabel.text = [data objectForKey:@"price"];
+    cell.imageView.image = [UIImage imageNamed:[data objectForKey:@"image"]];
     
     return cell;
 }
@@ -170,13 +179,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    UIViewController *detailViewController = [[UIViewController alloc] init];
+    
+    // データを受け渡す
+    NSDictionary *data = [_datas objectAtIndex:indexPath.row];
+    detailViewController.title = [data objectForKey:@"name"];
+    
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
 }
 
 @end
