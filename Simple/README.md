@@ -12,12 +12,6 @@ Simple
  * シンプルな UITableView のサンプル
  * ダミーの配列を用意してテーブルセルの textLabel へ表示
 
-構造
----------------
-　 ─ AppDelegate  
-　　　└ RootViewController  
-　　　　　└ DetailViewController
-
 イメージ
 ---------------
 　![Alt text](https://raw.github.com/syake/UITableView-Examples/master/Simple/assets/capture_01.png)
