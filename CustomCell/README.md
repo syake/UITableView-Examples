@@ -18,3 +18,5 @@ CustomCell
 ---------------
  * [Whitecat](http://whitecafe.sakura.ne.jp/ "Whitecat")
    * アイテム素材
+ * [TypePad](http://start.typepad.jp/typecast/ "TypePad")
+   * 絵文字
