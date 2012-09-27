@@ -65,7 +65,7 @@
         descriptionLabel.font = [UIFont systemFontOfSize:14];
         
         priceLabel = [[UILabel alloc] init];
-        priceLabel.font = [UIFont systemFontOfSize:12];
+        priceLabel.font = [UIFont systemFontOfSize:14];
     }
     return self;
 }
@@ -154,8 +154,23 @@
     y += r.size.height;
     s = priceLabel.text;
     size = [s sizeWithFont:priceLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
-    r = CGRectMake(x, y, size.width, size.height);
+    r = CGRectMake(x + 16, y, size.width, size.height);
     [s drawInRect:r withFont:priceLabel.font];
+    
+    // 画像描画
+    UIImage *image = [UIImage imageNamed:@"dollar.gif"];
+    CGRect frame = CGRectMake(x, y + 1, 14, 14);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSaveGState(context);
+    
+    // 上下反転
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    transform.d = -1.0f;
+    transform.ty = frame.origin.y * 2.0 + frame.size.height;
+    CGContextConcatCTM(context, transform);
+    
+    CGContextDrawImage(context, frame, image.CGImage);
+    UIGraphicsEndImageContext();
 }
 
 @end

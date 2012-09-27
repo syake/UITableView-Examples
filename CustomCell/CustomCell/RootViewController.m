@@ -49,12 +49,18 @@
     
     // データを生成
     _datas = [[NSArray alloc] initWithObjects:
-              [NSDictionary dictionaryWithObjectsAndKeys:@"銅鉱", @"name", @"item01.png", @"image", @"金属の銅を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"item02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"item03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"item04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"item05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", @"100", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"item06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", @"100", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"銅鉱", @"name", @"ore01.png", @"image", @"金属の銅を含有する鉱石。", @"description", @"10G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"ore02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", @"900G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"ore03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", @"500G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"ore04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", @"1,800G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"ore05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", @"9,100G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"ore06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", @"4,200G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ブロンズインゴット", @"name", @"ingot01.png", @"image", @"精錬した銅のかたまり。", @"description", @"200G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"アイアンインゴット", @"name", @"ingot02.png", @"image", @"精錬した鉄のかたまり。", @"description", @"3,600G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ブラスインゴット", @"name", @"ingot03.png", @"image", @"精錬した黄銅のかたまり。", @"description", @"2,200G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"シルバーインゴット", @"name", @"ingot04.png", @"image", @"精錬した銀のかたまり。", @"description", @"7,500G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"ゴールドインゴット", @"name", @"ingot05.png", @"image", @"精錬した金のかたまり。", @"description", @"37,200G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"アルミインゴット", @"name", @"ingot06.png", @"image", @"精錬したアルミニウムのかたまり。", @"description", @"21,000G", @"price", nil],
               nil];
 }
 
