@@ -19,3 +19,5 @@ Examples
    * UISearchDisplay を使ってリストの絞り込み検索のサンプル
  * CustomCell
    * UITableViewCell をカスタマイズしたサンプル
+ * Setting
+   * 設定用のコントローラーを配置した UITableView のサンプル
