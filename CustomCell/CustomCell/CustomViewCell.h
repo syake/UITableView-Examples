@@ -12,14 +12,14 @@
 @interface CustomViewCell : UITableViewCell
 {
     UIView *contentView;
-    UILabel *nameLabel;
-    UILabel *descriptionLabel;
-    UILabel *priceLabel;
+    UILabel *titleLabel;
+    UILabel *dateLabel;
+    UILabel *locationLabel;
 }
 
-@property (nonatomic, retain) UILabel *nameLabel;
-@property (nonatomic, retain) UILabel *descriptionLabel;
-@property (nonatomic, retain) UILabel *priceLabel;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) UILabel *dateLabel;
+@property (nonatomic, retain) UILabel *locationLabel;
 
 - (void)drawRectContent:(CGRect)rect;
 

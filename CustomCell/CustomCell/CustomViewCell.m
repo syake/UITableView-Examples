@@ -21,31 +21,31 @@
 
 @implementation CustomViewCell
 
-@synthesize nameLabel, descriptionLabel, priceLabel;
+@synthesize titleLabel, dateLabel, locationLabel;
 
 // セル全体の上マージン
-#define CELL_TOP_MARGIN 4
+#define CELL_TOP_MARGIN 6
 
 // セル全体の下マージン
-#define CELL_BOTTOM_MARGIN 4
+#define CELL_BOTTOM_MARGIN 6
 
 // セル全体の左マージン
-#define CELL_LEFT_MARGIN 6
+#define CELL_LEFT_MARGIN 10
 
 // セル全体の右マージン
-#define CELL_RIGHT_MARGIN 4
+#define CELL_RIGHT_MARGIN 14
 
-// コンテンツの左マージン
-#define CONTENT_LEFT_MARGIN 8
+// 画像の横サイズ
+#define IMAGE_WIDTH 90
 
-// 画像の縦横サイズ
-#define IMAGE_SIZE 48
+// 画像の縦サイズ
+#define IMAGE_HEIGHT 60
 
-// 最小のセルの高さ
-#define CELL_MIN_HEIGHT (CELL_TOP_MARGIN + IMAGE_SIZE + CELL_BOTTOM_MARGIN)
+// 水平のマージン
+#define HORIZONTAL_MARGIN 8
 
-// コンテンツの左位置
-#define CONTENT_LEFT (CELL_LEFT_MARGIN + IMAGE_SIZE + CONTENT_LEFT_MARGIN)
+// コンテンツ幅計算用の差分値
+#define CONTENT_DIFFERENTIAL_WIDTH (CELL_LEFT_MARGIN + CELL_RIGHT_MARGIN + IMAGE_WIDTH + HORIZONTAL_MARGIN)
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -58,14 +58,19 @@
         contentView.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:contentView];
         
-        nameLabel = [[UILabel alloc] init];
-        nameLabel.font = [UIFont boldSystemFontOfSize:14];
+        // imageViewに影を付ける
+        self.imageView.layer.shadowOpacity = 0.5;
+        self.imageView.layer.shadowOffset = CGSizeMake(2, 2);
+        self.imageView.layer.shadowRadius = 2.0;
         
-        descriptionLabel = [[UILabel alloc] init];
-        descriptionLabel.font = [UIFont systemFontOfSize:14];
+        titleLabel = [[UILabel alloc] init];
+        titleLabel.font = [UIFont boldSystemFontOfSize:16];
         
-        priceLabel = [[UILabel alloc] init];
-        priceLabel.font = [UIFont systemFontOfSize:14];
+        dateLabel = [[UILabel alloc] init];
+        dateLabel.font = [UIFont systemFontOfSize:12];
+        
+        locationLabel = [[UILabel alloc] init];
+        locationLabel.font = [UIFont systemFontOfSize:14];
     }
     return self;
 }
@@ -99,9 +104,9 @@
 
 - (void)dealloc
 {
-    [nameLabel release];
-    [descriptionLabel release];
-    [priceLabel release];
+    [titleLabel release];
+    [dateLabel release];
+    [locationLabel release];
     [contentView removeFromSuperview];
     [contentView release];
     [super dealloc];
@@ -112,15 +117,17 @@
 - (void) layoutSubviews
 {
     [super layoutSubviews];
-    self.imageView.frame = CGRectMake(CELL_LEFT_MARGIN, CELL_TOP_MARGIN, IMAGE_SIZE, IMAGE_SIZE);
+    float y = CELL_TOP_MARGIN;
+    float x = self.bounds.size.width - (IMAGE_WIDTH + CELL_RIGHT_MARGIN);
+    self.imageView.frame = CGRectMake(x, y, IMAGE_WIDTH, IMAGE_HEIGHT);
     self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)drawRectContent:(CGRect)rect
 {
-    float content_width = (rect.size.width - CONTENT_LEFT - CELL_RIGHT_MARGIN);
+    float content_width = rect.size.width - CONTENT_DIFFERENTIAL_WIDTH;
     float y = CELL_TOP_MARGIN;
-    float x = CONTENT_LEFT;
+    float x = CELL_LEFT_MARGIN;
     
     // フォントカラー設定
     UIColor *blackColor;
@@ -138,28 +145,30 @@
     CGRect r;
     
     [blackColor set];
-    s = nameLabel.text;
-    size = [s sizeWithFont:nameLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
+    s = titleLabel.text;
+    size = [s sizeWithFont:titleLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
     r = CGRectMake(x, y, size.width, size.height);
-    [s drawInRect:r withFont:nameLabel.font];
+    [s drawInRect:r withFont:titleLabel.font lineBreakMode:UILineBreakModeTailTruncation];
+    
+    y += r.size.height + 2;
     
     [blackColor set];
-    y += r.size.height;
-    s = descriptionLabel.text;
-    size = [s sizeWithFont:descriptionLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
+    s = dateLabel.text;
+    size = [s sizeWithFont:dateLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
     r = CGRectMake(x, y, size.width, size.height);
-    [s drawInRect:r withFont:descriptionLabel.font];
+    [s drawInRect:r withFont:dateLabel.font];
+    
+    y += r.size.height + 8;
     
     [grayColor set];
-    y += r.size.height;
-    s = priceLabel.text;
-    size = [s sizeWithFont:priceLabel.font forWidth:content_width lineBreakMode:UILineBreakModeTailTruncation];
-    r = CGRectMake(x + 16, y, size.width, size.height);
-    [s drawInRect:r withFont:priceLabel.font];
+    s = locationLabel.text;
+    size = [s sizeWithFont:locationLabel.font forWidth:content_width - 20 lineBreakMode:UILineBreakModeTailTruncation];
+    r = CGRectMake(x + 20, y, size.width, size.height);
+    [s drawInRect:r withFont:locationLabel.font lineBreakMode:UILineBreakModeTailTruncation];
     
     // 画像描画
-    UIImage *image = [UIImage imageNamed:@"dollar.gif"];
-    CGRect frame = CGRectMake(x, y + 1, 14, 14);
+    UIImage *image = [UIImage imageNamed:@"86-camera.png"];
+    CGRect frame = CGRectMake(x, y + 3, 16, 12);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     

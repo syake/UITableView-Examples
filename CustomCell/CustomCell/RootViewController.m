@@ -49,18 +49,14 @@
     
     // データを生成
     _datas = [[NSArray alloc] initWithObjects:
-              [NSDictionary dictionaryWithObjectsAndKeys:@"銅鉱", @"name", @"ore01.png", @"image", @"金属の銅を含有する鉱石。", @"description", @"10G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"鉄鉱石", @"name", @"ore02.png", @"image", @"金属の鉄を含有する鉱石。", @"description", @"900G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"亜鉛鉱", @"name", @"ore03.png", @"image", @"貴金属の亜鉛を含有する鉱石。", @"description", @"500G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"銀鉱", @"name", @"ore04.png", @"image", @"貴金属の銀を含有する鉱石。", @"description", @"1,800G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"金鉱", @"name", @"ore05.png", @"image", @"貴金属の金を含有する鉱石。", @"description", @"9,100G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ボーキサイト", @"name", @"ore06.png", @"image", @"酸化アルミニウムを含有する鉱石。", @"description", @"4,200G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ブロンズインゴット", @"name", @"ingot01.png", @"image", @"精錬した銅のかたまり。", @"description", @"200G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"アイアンインゴット", @"name", @"ingot02.png", @"image", @"精錬した鉄のかたまり。", @"description", @"3,600G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ブラスインゴット", @"name", @"ingot03.png", @"image", @"精錬した黄銅のかたまり。", @"description", @"2,200G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"シルバーインゴット", @"name", @"ingot04.png", @"image", @"精錬した銀のかたまり。", @"description", @"7,500G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"ゴールドインゴット", @"name", @"ingot05.png", @"image", @"精錬した金のかたまり。", @"description", @"37,200G", @"price", nil],
-              [NSDictionary dictionaryWithObjectsAndKeys:@"アルミインゴット", @"name", @"ingot06.png", @"image", @"精錬したアルミニウムのかたまり。", @"description", @"21,000G", @"price", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01609", @"id", @"公園からサグラダ・ファミリアを", @"title", @"サグラダ・ファミリア（聖家族教会）", @"location", @"2img_2788.jpg", @"image", @"2010-01-01", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01530", @"id", @"案山子とコスモス", @"title", @"白川郷", @"location", @"1img_9973.jpg", @"image", @"2009-09-21", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01440", @"id", @"カルタジローネの街中", @"title", @"カルタジローネ", @"location", @"1img_9579.jpg", @"image", @"2009-08-13", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01395", @"id", @"アルベロベッロの夜景　その４", @"title", @"アルベロベッロの街中", @"location", @"1img_9093.jpg", @"image", @"2009-08-12", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"00490", @"id", @"清滝川をさらに奥まで進む", @"title", @"高雄山の錦雲峡", @"location", @"CRW_5446_JFR.jpg", @"image", @"2004-08-15", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01369", @"id", @"海岸沿いを船で", @"title", @"アマルフィー海岸", @"location", @"1img_8859.jpg", @"image", @"2009-08-11", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"01351", @"id", @"ボートでの1周も終え", @"title", @"青の洞窟（Grotta Azzurra）", @"location", @"1img_8691.jpg", @"image", @"2009-08-10", @"date", nil],
+              [NSDictionary dictionaryWithObjectsAndKeys:@"00212", @"id", @"夕焼け時の黄金色の海の写真", @"title", @"かりゆしビーチ付近", @"location", @"DSC00330.jpg", @"image", @"2003-08-11", @"date", nil],
               nil];
 }
 
@@ -119,7 +115,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return  60.0f;
+    return  76.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -133,9 +129,9 @@
     
     // 中身を生成
     NSDictionary *data = [_datas objectAtIndex:indexPath.row];
-    cell.nameLabel.text = [data objectForKey:@"name"];
-    cell.descriptionLabel.text = [data objectForKey:@"description"];
-    cell.priceLabel.text = [data objectForKey:@"price"];
+    cell.titleLabel.text = [data objectForKey:@"title"];
+    cell.dateLabel.text = [NSString stringWithFormat:@"%@ %@", [data objectForKey:@"id"], [data objectForKey:@"date"]];
+    cell.locationLabel.text = [data objectForKey:@"location"];
     cell.imageView.image = [UIImage imageNamed:[data objectForKey:@"image"]];
     
     return cell;

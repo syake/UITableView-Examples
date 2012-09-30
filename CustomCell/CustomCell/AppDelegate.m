@@ -30,7 +30,6 @@
     // RootViewController生成
     RootViewController *rootViewController = [[[RootViewController alloc] init] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:rootViewController] autorelease];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.window.rootViewController = self.navigationController;
     
     [self.window makeKeyAndVisible];
