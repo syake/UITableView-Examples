@@ -43,6 +43,7 @@
     
     // タイトル
     self.navigationItem.title = @"Simple";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     
     // データを生成
     _datas = [[NSMutableArray alloc] init];
