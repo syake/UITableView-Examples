@@ -21,3 +21,5 @@ Examples
    * UITableViewCell をカスタマイズしたサンプル
  * Setting
    * 設定用のコントローラーを配置した UITableView のサンプル
+ * PullRefresh
+   * スクロールを引っ張って更新する UITableView のサンプル
