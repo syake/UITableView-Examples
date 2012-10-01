@@ -13,6 +13,8 @@ Twitter
  * iOS5 から実装された Twitter API から Public Timeline の読み込み
  * カスタム UITableViewCell を作成してツイート情報をレイアウトする
  * GCD (Grand Central Dispatch) を使って画像の非同期通信を実装
+ * プルダウンしてタイムラインを再読み込みする機能を実装
+ * 更新ボタンを押してタイムラインを再読み込みする機能を実装
 
 イメージ
 ---------------
