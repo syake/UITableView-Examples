@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "RefreshHeaderView.h"
 #import "IndicatorViewCell.h"
 #import "TweetViewCell.h"
 #import "DetailViewController.h"
@@ -35,6 +36,17 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (void)dealloc
+{
+    [headerView removeFromSuperview];
+    [headerView release];
+    [statuses release];
+    [imageCache release];
+    [super dealloc];
+}
+
+#pragma mark - custom method
+
 - (void)loadTimeline
 {
     loaded = false;
@@ -50,19 +62,34 @@
     TWRequest *request = [[TWRequest alloc] initWithURL:url parameters:params requestMethod:TWRequestMethodGET];
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
     {
-        loaded = true;
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        
-        if (responseData) {
-            NSError *jsonError;
-            statuses = [[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&jsonError] retain];
-            if (statuses) {
-                dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            loaded = true;
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [headerView scrollViewDataSourceDidFinishedLoading:self.tableView];
+            
+            if (responseData) {
+                // 解放
+                if (statuses != nil) {
+                    [statuses release];
+                }
+                
+                NSError *jsonError;
+                statuses = [[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&jsonError] retain];
+                if (statuses) {
                     [self.tableView reloadData];
-                });
+                }
             }
-        }
+        });
     }];
+}
+
+#pragma mark - action
+
+- (void)refreshButtonPushed:(id)selector
+{
+    // リフレッシュボタンが押された時の処理
+    [headerView refreshLoading:self.tableView];
+    [self loadTimeline];
 }
 
 #pragma mark - View lifecycle
@@ -73,6 +100,16 @@
     
     // タイトル
     self.navigationItem.title = @"public_timeline";
+    self.navigationController.navigationBar.tintColor = [UIColor colorWithRed:49/255.0 green:141/255.0 blue:195/255.0 alpha:1];
+    
+    // リフレッシュボタン
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshButtonPushed:)] autorelease];
+    
+    // RefreshHeaderView
+    headerView = [[RefreshHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    headerView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+    self.tableView.tableHeaderView = headerView;
+    self.tableView.contentInset = UIEdgeInsetsMake(-headerView.frame.size.height, 0.0f, 0.0f, 0.0f);
     
     // タイムラインを読み込む
     [self loadTimeline];
@@ -179,13 +216,16 @@
         
         dispatch_queue_t q_global = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         dispatch_async(q_global, ^{
-            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL: [NSURL URLWithString: imageUrl]]];
-            [imageCache setObject:image forKey:imageUrl];
-            dispatch_async(dispatch_get_main_queue(), ^{            
-                cell.imageView.image = image;
-                [cell layoutSubviews];
-            });
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString: imageUrl]]];
+            if (image != nil) {
+                [imageCache setObject:image forKey:imageUrl];
+                dispatch_async(dispatch_get_main_queue(), ^{            
+                    cell.imageView.image = image;
+                    [cell layoutSubviews];
+                });
+            }
         });
+        dispatch_release(q_global);
     }
     
     return cell;
@@ -244,6 +284,22 @@
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
+}
+
+#pragma mark - UIScrollView delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [headerView scrollViewDidScroll:scrollView];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [headerView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    if (headerView.isLoading) {
+        // タイムラインを読み込む
+        [self loadTimeline];
+    }
 }
 
 @end

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  Twitter
+//  PullRefresh
 //
-//  Created by Hiroaki Komatsu on 12/09/12.
+//  Created by Hiroaki Komatsu on 12/09/30.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

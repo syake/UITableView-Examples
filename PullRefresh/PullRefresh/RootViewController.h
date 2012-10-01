@@ -1,22 +1,18 @@
 //
 //  RootViewController.h
-//  Twitter
+//  PullRefresh
 //
-//  Created by Hiroaki Komatsu on 12/09/12.
+//  Created by Hiroaki Komatsu on 12/09/30.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <Twitter/Twitter.h>
 
 @class RefreshHeaderView;
 
 @interface RootViewController : UITableViewController
 {
     RefreshHeaderView *headerView;
-    BOOL loaded;
-    NSArray *statuses;
-    NSCache *imageCache;
 }
 
 @end
