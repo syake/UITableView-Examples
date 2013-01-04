@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5427E134169523910035DC3C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5427E133169523910035DC3C /* Default-568h@2x.png */; };
 		54351B9C1613DE2700620BAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54351B9B1613DE2700620BAB /* UIKit.framework */; };
 		54351B9E1613DE2700620BAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54351B9D1613DE2700620BAB /* Foundation.framework */; };
 		54351BA01613DE2700620BAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54351B9F1613DE2700620BAB /* CoreGraphics.framework */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5427E133169523910035DC3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		54351B971613DE2700620BAB /* Setting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Setting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54351B9B1613DE2700620BAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		54351B9D1613DE2700620BAB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,6 +56,7 @@
 		54351B8C1613DE2700620BAB = {
 			isa = PBXGroup;
 			children = (
+				5427E133169523910035DC3C /* Default-568h@2x.png */,
 				54351BA11613DE2700620BAB /* Setting */,
 				54351B9A1613DE2700620BAB /* Frameworks */,
 				54351B981613DE2700620BAB /* Products */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54351BA61613DE2700620BAB /* InfoPlist.strings in Resources */,
+				5427E134169523910035DC3C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
