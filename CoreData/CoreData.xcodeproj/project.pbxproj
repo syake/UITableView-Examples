@@ -15,6 +15,11 @@
 		5419653C1680515D004AE07D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5419653B1680515D004AE07D /* main.m */; };
 		541965401680515D004AE07D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5419653F1680515D004AE07D /* AppDelegate.m */; };
 		541965431680515D004AE07D /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 541965411680515D004AE07D /* CoreData.xcdatamodeld */; };
+		5419654B168051C5004AE07D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5419654A168051C4004AE07D /* RootViewController.m */; };
+		5419654E1680591A004AE07D /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5419654D1680591A004AE07D /* Entity.m */; };
+		5427E11F1695074F0035DC3C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5427E11E1695074F0035DC3C /* Default-568h@2x.png */; };
+		5427E1271695113F0035DC3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5427E1261695113F0035DC3C /* DetailViewController.m */; };
+		5427E13116951E710035DC3C /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5427E13016951E700035DC3C /* AddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +28,22 @@
 		5419652F1680515D004AE07D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		541965311680515D004AE07D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		541965331680515D004AE07D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		541965371680515D004AE07D /* CoreData-Info.plist */ = {isa = PBXFileReference; path = "CoreData-Info.plist"; sourceTree = "<group>"; };
+		541965371680515D004AE07D /* CoreData-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoreData-Info.plist"; sourceTree = "<group>"; };
 		541965391680515D004AE07D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5419653B1680515D004AE07D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5419653D1680515D004AE07D /* CoreData-Prefix.pch */ = {isa = PBXFileReference; path = "CoreData-Prefix.pch"; sourceTree = "<group>"; };
-		5419653E1680515D004AE07D /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		5419653D1680515D004AE07D /* CoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreData-Prefix.pch"; sourceTree = "<group>"; };
+		5419653E1680515D004AE07D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5419653F1680515D004AE07D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		541965421680515D004AE07D /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		54196549168051C4004AE07D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		5419654A168051C4004AE07D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		5419654C1680591A004AE07D /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		5419654D1680591A004AE07D /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		5427E11E1695074F0035DC3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5427E1251695113F0035DC3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		5427E1261695113F0035DC3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		5427E12F16951E700035DC3C /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		5427E13016951E700035DC3C /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +64,7 @@
 		5419651E1680515D004AE07D = {
 			isa = PBXGroup;
 			children = (
+				5427E11E1695074F0035DC3C /* Default-568h@2x.png */,
 				541965351680515D004AE07D /* CoreData */,
 				5419652C1680515D004AE07D /* Frameworks */,
 				5419652A1680515D004AE07D /* Products */,
@@ -80,6 +95,14 @@
 			children = (
 				5419653E1680515D004AE07D /* AppDelegate.h */,
 				5419653F1680515D004AE07D /* AppDelegate.m */,
+				54196549168051C4004AE07D /* RootViewController.h */,
+				5419654A168051C4004AE07D /* RootViewController.m */,
+				5427E1251695113F0035DC3C /* DetailViewController.h */,
+				5427E1261695113F0035DC3C /* DetailViewController.m */,
+				5427E12F16951E700035DC3C /* AddViewController.h */,
+				5427E13016951E700035DC3C /* AddViewController.m */,
+				5419654C1680591A004AE07D /* Entity.h */,
+				5419654D1680591A004AE07D /* Entity.m */,
 				541965411680515D004AE07D /* CoreData.xcdatamodeld */,
 				541965361680515D004AE07D /* Supporting Files */,
 			);
@@ -123,7 +146,7 @@
 		541965201680515D004AE07D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0450;
 			};
 			buildConfigurationList = 541965231680515D004AE07D /* Build configuration list for PBXProject "CoreData" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -148,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5419653A1680515D004AE07D /* InfoPlist.strings in Resources */,
+				5427E11F1695074F0035DC3C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +185,10 @@
 				5419653C1680515D004AE07D /* main.m in Sources */,
 				541965401680515D004AE07D /* AppDelegate.m in Sources */,
 				541965431680515D004AE07D /* CoreData.xcdatamodeld in Sources */,
+				5419654B168051C5004AE07D /* RootViewController.m in Sources */,
+				5419654E1680591A004AE07D /* Entity.m in Sources */,
+				5427E1271695113F0035DC3C /* DetailViewController.m in Sources */,
+				5427E13116951E710035DC3C /* AddViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +292,7 @@
 				541965481680515D004AE07D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

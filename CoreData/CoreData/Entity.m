@@ -12,7 +12,7 @@
 @implementation Entity
 
 @dynamic text;
-@dynamic check;
-@dynamic update;
+@dynamic timestamp;
+@dynamic pubdate;
 
 @end

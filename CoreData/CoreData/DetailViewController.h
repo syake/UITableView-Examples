@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@class Entity;
+
+@interface DetailViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, strong) Entity *entity;
+
+@end
+
+
+@interface DetailViewController (Private)
+
+- (void)commit;
 
 @end

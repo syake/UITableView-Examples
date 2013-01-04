@@ -13,7 +13,7 @@
 @interface Entity : NSManagedObject
 
 @property (nonatomic, retain) NSString * text;
-@property (nonatomic, retain) NSNumber * check;
-@property (nonatomic, retain) NSDate * update;
+@property (nonatomic, retain) NSDate * timestamp;
+@property (nonatomic, retain) NSDate * pubdate;
 
 @end

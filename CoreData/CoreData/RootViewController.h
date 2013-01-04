@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddViewController.h"
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <NSFetchedResultsControllerDelegate, AddViewControllerDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
