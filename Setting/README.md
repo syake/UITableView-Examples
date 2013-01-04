@@ -3,8 +3,8 @@ Setting
 
 条件
 ---------------
- * Xcode 4.2
- * iOS SDK 5.1
+ * Xcode 4.5.2
+ * iOS SDK 6.0
  * Objective-C
 
 概要
