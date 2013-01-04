@@ -10,7 +10,7 @@ CoreData
 概要
 ---------------
  * Core Data（永続化フレームワーク）を使ったサンプル
- * テキスト入力をして UITableView に反映
+ * Automatic Reference Counting （自動リファレンスカウンタ）を使用
 
 イメージ
 ---------------
