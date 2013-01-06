@@ -10,7 +10,7 @@ DeckMenu
 
 概要
 ---------------
- * chileViewController を使ってスライドメニューを追加
+ * chileViewController を使ってFacebookライクなスライドメニューを追加
  * 左上にメニュー開閉ボタンを設置し、UIBarButtonItem の素材を作成
  * メニューの UITableView のスタイルを、背景グレー、文字色白に変更
  * メニューのデータソースを配列リテラルで管理
