@@ -27,4 +27,4 @@ Examples
  * CoreData
    * Core Data（永続化フレームワーク）を使ったサンプル
  * DeckMenu
-   * chileViewController を使ってスライドメニューを追加
+   * chileViewController を使ってFacebookライクなスライドメニューを追加
