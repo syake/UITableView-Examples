@@ -11,7 +11,7 @@ DeckMenu
 概要
 ---------------
  * chileViewController を使ってスライドメニューを追加
- * メニュー開閉ボタン用 UIBarButtonItem の素材を作成
+ * 左上にメニュー開閉ボタンを設置し、UIBarButtonItem の素材を作成
  * メニューを背景グレー、文字色白に変更
  * メニューのデータソースを配列リテラルで管理
  * どのメニューが選択されたかの判定を UITableViewCell の tag と 列挙型の定数（enum）で管理
