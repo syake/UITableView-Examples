@@ -6,6 +6,7 @@ Search
  * Xcode 4.2
  * iOS SDK 5.1
  * Objective-C
+ * iOS 5.1以上
 
 概要
 ---------------
