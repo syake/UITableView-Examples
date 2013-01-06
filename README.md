@@ -25,3 +25,5 @@ Examples
    * スクロールを引っ張って更新する UITableView のサンプル
  * CoreData
    * Core Data（永続化フレームワーク）を使ったサンプル
+ * DeckMenu
+   * chileViewController を使ってスライドメニューを追加
