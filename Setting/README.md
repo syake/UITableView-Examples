@@ -6,6 +6,7 @@ Setting
  * Xcode 4.5.2
  * iOS SDK 6.0
  * Objective-C
+ * iOS 5.1以上
 
 概要
 ---------------
