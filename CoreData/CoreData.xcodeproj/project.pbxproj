@@ -39,7 +39,7 @@
 		5419654A168051C4004AE07D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		5419654C1680591A004AE07D /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		5419654D1680591A004AE07D /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
-		5427E11E1695074F0035DC3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5427E11E1695074F0035DC3C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		5427E1251695113F0035DC3C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5427E1261695113F0035DC3C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		5427E12F16951E700035DC3C /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
@@ -64,7 +64,6 @@
 		5419651E1680515D004AE07D = {
 			isa = PBXGroup;
 			children = (
-				5427E11E1695074F0035DC3C /* Default-568h@2x.png */,
 				541965351680515D004AE07D /* CoreData */,
 				5419652C1680515D004AE07D /* Frameworks */,
 				5419652A1680515D004AE07D /* Products */,
@@ -112,6 +111,7 @@
 		541965361680515D004AE07D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5427E11E1695074F0035DC3C /* Default-568h@2x.png */,
 				541965371680515D004AE07D /* CoreData-Info.plist */,
 				541965381680515D004AE07D /* InfoPlist.strings */,
 				5419653B1680515D004AE07D /* main.m */,
