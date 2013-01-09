@@ -26,5 +26,5 @@ Examples
    * スクロールを引っ張って更新する UITableView のサンプル
  * CoreData
    * Core Data（永続化フレームワーク）を使ったサンプル
- * DeckMenu
+ * [DeckMenu](https://github.com/syake/UITableView-Examples/tree/master/DeckMenu "DeckMenu")
    * chileViewController を使ってFacebookライクなスライドメニューを追加
