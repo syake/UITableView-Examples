@@ -15,6 +15,24 @@ enum {
 };
 typedef NSUInteger ContentType;
 
-@interface MenuViewController : UITableViewController
+
+@protocol MenuViewControllerDelegate
+
+@optional
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
+
+
+@interface MenuViewController : UITableViewController {
+    __strong NSArray *_datas;
+    __strong NSArray *_titles;
+}
+
+@property (nonatomic, assign) id <MenuViewControllerDelegate> delegate;
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section;
+
+@end
+

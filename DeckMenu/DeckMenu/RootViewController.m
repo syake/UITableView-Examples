@@ -7,7 +7,6 @@
 //
 
 #import "RootViewController.h"
-#import "MenuViewController.h"
 
 @interface RootViewController ()
 
@@ -32,6 +31,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -42,7 +42,7 @@
     
     // menu table view
     MenuViewController *menuTableViewController = [[MenuViewController alloc] init];
-    menuTableViewController.tableView.delegate = self;
+    menuTableViewController.delegate = self;
     
     UIView *dummyView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width - 50, self.view.frame.size.height)];
     [menuTableViewController.view setFrame:dummyView.frame];
@@ -56,6 +56,15 @@
     [self addChildViewController:navigationController];
     [navigationController didMoveToParentViewController:self];
     [self.view addSubview:navigationController.view];
+    
+    // shadow
+    UIBezierPath* newShadowPath = [UIBezierPath bezierPathWithRect:navigationController.view.bounds];
+    navigationController.view.layer.masksToBounds = NO;
+    navigationController.view.layer.shadowRadius = 10;
+    navigationController.view.layer.shadowOpacity = 0.5;
+    navigationController.view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    navigationController.view.layer.shadowOffset = CGSizeZero;
+    navigationController.view.layer.shadowPath = [newShadowPath CGPath];
     
     // create viewController1
     self.viewController1 = [[UIViewController alloc] init];
@@ -121,7 +130,7 @@
     UINavigationController *firstNavigationController = [self.childViewControllers objectAtIndex:1];
     UIView *firstView = firstNavigationController.view;
     CGRect offset = firstView.frame;
-    offset.origin.x = _isOpen ? offset.size.width - 50 : 0;
+    offset.origin.x = _isOpen ? offset.size.width - 80 : 0;
     
     [UIView animateWithDuration:0.3 animations:^{
         firstView.frame = offset;
@@ -130,8 +139,6 @@
     }];
 }
 
-#pragma mark - Table view delegate
-
 - (void)switchView:(UIViewController *)viewController
 {
     [self removeFirstViewController];
@@ -139,10 +146,10 @@
     [self slide:nil];
 }
 
+#pragma mark - MenuViewController delegate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     switch (cell.tag) {
         case ContentType_1:

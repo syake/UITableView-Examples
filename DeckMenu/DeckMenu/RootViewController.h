@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
+#import "MenuViewController.h"
 
-@interface RootViewController : UIViewController <UITableViewDelegate>
+@interface RootViewController : UIViewController <MenuViewControllerDelegate>
 
 @end
