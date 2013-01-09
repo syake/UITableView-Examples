@@ -28,3 +28,5 @@ Examples
    * Core Data（永続化フレームワーク）を使ったサンプル
  * [DeckMenu](https://github.com/syake/UITableView-Examples/tree/master/DeckMenu "DeckMenu")
    * chileViewController を使ってFacebookライクなスライドメニューを追加
+ * [SimpleARC](https://github.com/syake/UITableView-Examples/tree/master/SimpleARC "SimpleARC")
+   * Automatic Reference Counting （自動リファレンスカウンタ）を使った シンプルな UITableView のサンプル
