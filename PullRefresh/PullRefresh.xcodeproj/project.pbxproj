@@ -19,6 +19,7 @@
 		545398A41618696C00B4859A /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 545398A21618696C00B4859A /* grayArrow@2x.png */; };
 		545398A716187A5900B4859A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545398A616187A5900B4859A /* QuartzCore.framework */; };
 		545398CD16189FD000B4859A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 545398CB16189FD000B4859A /* Localizable.strings */; };
+		549B5EAF177A25F5005BA9EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549B5EAE177A25F5005BA9EC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		545398CA16189F8C00B4859A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = "/Users/syake/Documents/Development/github/local/UITableView-Examples/PullRefresh/PullRefresh/ja.lproj/InfoPlist.strings"; sourceTree = "<absolute>"; };
 		545398CC16189FD000B4859A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		545398CE16189FDA00B4859A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		549B5EAE177A25F5005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		545398741618533100B4859A = {
 			isa = PBXGroup;
 			children = (
+				549B5EAE177A25F5005BA9EC /* Default-568h@2x.png */,
 				545398891618533100B4859A /* PullRefresh */,
 				545398A01618695B00B4859A /* Resources */,
 				545398821618533100B4859A /* Frameworks */,
@@ -179,6 +182,7 @@
 				545398A31618696C00B4859A /* grayArrow.png in Resources */,
 				545398A41618696C00B4859A /* grayArrow@2x.png in Resources */,
 				545398CD16189FD000B4859A /* Localizable.strings in Resources */,
+				549B5EAF177A25F5005BA9EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

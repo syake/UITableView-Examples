@@ -16,6 +16,7 @@
 		5401BF6315FF1F1A00AD51C6 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5401BF6215FF1F1A00AD51C6 /* RootViewController.m */; };
 		5401BF6B15FF22B400AD51C6 /* MyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5401BF6A15FF22B400AD51C6 /* MyData.m */; };
 		5416BE4116006E360029C05C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5416BE4016006E360029C05C /* DetailViewController.m */; };
+		549B5EA9177A2347005BA9EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549B5EA8177A2347005BA9EC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		5401BF6A15FF22B400AD51C6 /* MyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyData.m; path = Model/MyData.m; sourceTree = "<group>"; };
 		5416BE3F16006E360029C05C /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		5416BE4016006E360029C05C /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		549B5EA8177A2347005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		5401BF3B15FF1F0600AD51C6 = {
 			isa = PBXGroup;
 			children = (
+				549B5EA8177A2347005BA9EC /* Default-568h@2x.png */,
 				5401BF5015FF1F0600AD51C6 /* Simple */,
 				5401BF4915FF1F0600AD51C6 /* Frameworks */,
 				5401BF4715FF1F0600AD51C6 /* Products */,
@@ -139,7 +142,7 @@
 		5401BF3D15FF1F0600AD51C6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 5401BF4015FF1F0600AD51C6 /* Build configuration list for PBXProject "Simple" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5401BF5515FF1F0600AD51C6 /* InfoPlist.strings in Resources */,
+				549B5EA9177A2347005BA9EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +205,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -214,6 +222,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
@@ -226,12 +235,17 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
