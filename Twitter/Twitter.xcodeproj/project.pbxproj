@@ -18,6 +18,7 @@
 		5416BEBF16009A390029C05C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5416BEBE16009A390029C05C /* RootViewController.m */; };
 		545FF1AE16017B800065FC55 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 545FF1AD16017B800065FC55 /* Twitter.framework */; };
 		545FF1B816018C050065FC55 /* IndicatorViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 545FF1B716018C050065FC55 /* IndicatorViewCell.m */; };
+		549B5EA7177A2305005BA9EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549B5EA6177A2305005BA9EC /* Default-568h@2x.png */; };
 		54F7781216193BD400A79CE8 /* RefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54F7781116193BD400A79CE8 /* RefreshHeaderView.m */; };
 		54F7781516193C1200A79CE8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54F7781416193C1200A79CE8 /* QuartzCore.framework */; };
 		54F7781916193E8B00A79CE8 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 54F7781716193E8B00A79CE8 /* grayArrow.png */; };
@@ -44,6 +45,7 @@
 		545FF1AD16017B800065FC55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		545FF1B616018C050065FC55 /* IndicatorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorViewCell.h; sourceTree = "<group>"; };
 		545FF1B716018C050065FC55 /* IndicatorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorViewCell.m; sourceTree = "<group>"; };
+		549B5EA6177A2305005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		54F7781016193BD400A79CE8 /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		54F7781116193BD400A79CE8 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderView.m; sourceTree = "<group>"; };
 		54F7781416193C1200A79CE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -70,6 +72,7 @@
 		5416BE8C160096D90029C05C = {
 			isa = PBXGroup;
 			children = (
+				549B5EA6177A2305005BA9EC /* Default-568h@2x.png */,
 				5416BEA1160096D90029C05C /* Twitter */,
 				54F7781616193E5800A79CE8 /* Resources */,
 				5416BE9A160096D90029C05C /* Frameworks */,
@@ -190,6 +193,7 @@
 				5416BEA6160096D90029C05C /* InfoPlist.strings in Resources */,
 				54F7781916193E8B00A79CE8 /* grayArrow.png in Resources */,
 				54F7781A16193E8B00A79CE8 /* grayArrow@2x.png in Resources */,
+				549B5EA7177A2305005BA9EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

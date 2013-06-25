@@ -14,6 +14,7 @@
 		54084685160FBA7A00081C67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54084684160FBA7A00081C67 /* main.m */; };
 		54084689160FBA7A00081C67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54084688160FBA7A00081C67 /* AppDelegate.m */; };
 		54084691160FBA9700081C67 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54084690160FBA9600081C67 /* RootViewController.m */; };
+		549B5EAB177A25D0005BA9EC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 549B5EAA177A25D0005BA9EC /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		54084688160FBA7A00081C67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5408468F160FBA9600081C67 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		54084690160FBA9600081C67 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		549B5EAA177A25D0005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		54084669160FBA7A00081C67 = {
 			isa = PBXGroup;
 			children = (
+				549B5EAA177A25D0005BA9EC /* Default-568h@2x.png */,
 				5408467E160FBA7A00081C67 /* Search */,
 				54084677160FBA7A00081C67 /* Frameworks */,
 				54084675160FBA7A00081C67 /* Products */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54084683160FBA7A00081C67 /* InfoPlist.strings in Resources */,
+				549B5EAB177A25D0005BA9EC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +266,7 @@
 				5408468E160FBA7A00081C67 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
