@@ -45,7 +45,11 @@
 		545FF1AD16017B800065FC55 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		545FF1B616018C050065FC55 /* IndicatorViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndicatorViewCell.h; sourceTree = "<group>"; };
 		545FF1B716018C050065FC55 /* IndicatorViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndicatorViewCell.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		549B5EA6177A2305005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+=======
+		549B5EA6177A2305005BA9EC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+>>>>>>> 1a268b4c0d40b32250b476a52022935fe8a3b1ed
 		54F7781016193BD400A79CE8 /* RefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefreshHeaderView.h; sourceTree = "<group>"; };
 		54F7781116193BD400A79CE8 /* RefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefreshHeaderView.m; sourceTree = "<group>"; };
 		54F7781416193C1200A79CE8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -72,6 +76,7 @@
 		5416BE8C160096D90029C05C = {
 			isa = PBXGroup;
 			children = (
+				549B5EA6177A2305005BA9EC /* Default-568h@2x.png */,
 				5416BEA1160096D90029C05C /* Twitter */,
 				54F7781616193E5800A79CE8 /* Resources */,
 				5416BE9A160096D90029C05C /* Frameworks */,
